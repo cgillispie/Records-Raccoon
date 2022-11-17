@@ -19,7 +19,6 @@ from django.urls import include, path
 from .views import ping, homepage
 
 urlpatterns = [
-    path('/', homepage, name='homepage'),
     path('admin/', admin.site.urls),
     path('ping/', ping, name="ping"),
     path('', include("records.urls")),
