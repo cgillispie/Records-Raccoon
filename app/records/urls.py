@@ -9,5 +9,5 @@ urlpatterns = [
     path("api/movies/<int:pk>/", MovieDetail.as_view()),
     path("api/records/", RecordList.as_view()),
     path("api/records/<int:pk>/", RecordDetail.as_view()),
-    path('/', homepage, name='homepage'),
+    path('/homepage/', homepage, name='homepage'),
 ]
