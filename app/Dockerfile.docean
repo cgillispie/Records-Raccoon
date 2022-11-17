@@ -10,7 +10,8 @@ ENV PYTHONUNBUFFERED 1
 ENV DEBUG 1
 ENV SECRET_KEY foo
 ENV DJANGO_ALLOWED_HOSTS .ondigitalocean.app
-ENV DATASBASE_URL ${db.DATABASE_URL}
+# make this an env var on App Platform settings
+#ENV DATASBASE_URL ${db.DATABASE_URL}
 ENV DEVELOPMENT_MODE 1
 
 # install system dependencies
