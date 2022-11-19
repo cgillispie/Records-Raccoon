@@ -24,9 +24,13 @@ RUN pip install -r requirements.txt
 # add app
 COPY . .
 
+# collect static files
+RUN python manage.py collectstatic --noinput
+
 # add and run as non-root user
-RUN adduser --disabled-password myuser
-USER myuser
+RUN adduser --disabled-password raccoon
+USER raccoon
 
 # run gunicorn
-CMD gunicorn drf_project.wsgi:application --bind 0.0.0.0:$PORT --worker-tmp-dir /dev/shm
+# CMD gunicorn drf_project.wsgi:application --bind 0.0.0.0:$PORT --worker-tmp-dir /dev/shm
+CMD gunicorn drf_project.wsgi:application --bind localhost:9000
