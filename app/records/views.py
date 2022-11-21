@@ -1,12 +1,13 @@
 from django.http import Http404
-from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from .models import Movie, Record
 from .serializers import MovieSerializer, RecordSerializer
 
 # Movie
+
 
 class MovieList(APIView):
     def get(self, request, format=None):
@@ -34,7 +35,9 @@ class MovieDetail(APIView):
         serializer = MovieSerializer(movie)
         return Response(serializer.data)
 
+
 # Record
+
 
 class RecordList(APIView):
     def get(self, request, format=None):
@@ -61,4 +64,3 @@ class RecordDetail(APIView):
         record = self.get_object(pk)
         serializer = RecordSerializer(record)
         return Response(serializer.data)
-

@@ -1,3 +1,6 @@
 __pycache__
 env
-*.sqlite3
+*.sqlite
+launch.json
+.env.dev
+

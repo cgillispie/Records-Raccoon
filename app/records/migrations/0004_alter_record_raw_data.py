@@ -7,13 +7,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('records', '0003_record'),
+        ("records", "0003_record"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='record',
-            name='raw_data',
-            field=models.JSONField(default={'key_1': 'Value 1', 'next_value': 'Next Value'}, encoder=django.core.serializers.json.DjangoJSONEncoder),
+            model_name="record",
+            name="raw_data",
+            field=models.JSONField(
+                default={"key_1": "Value 1", "next_value": "Next Value"},
+                encoder=django.core.serializers.json.DjangoJSONEncoder,
+            ),
         ),
     ]
